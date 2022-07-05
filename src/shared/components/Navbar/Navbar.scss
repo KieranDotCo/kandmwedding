@@ -1,0 +1,26 @@
+.Navbar {
+  .name-header {
+    font-size: 4rem;
+    margin: 0;
+  }
+  .sub-header {
+    margin: 0;
+  }
+  .MuiAppBar-root {
+    background: white;
+    box-shadow: none;
+
+    a.nav-link {
+      color: black;
+      padding: 6px;
+      text-align: center;
+      text-transform: none;
+      font-size: 1rem;
+      &.active,
+      &:hover {
+        border-bottom: 2px solid black;
+        border-radius: 0;
+      }
+    }
+  }
+}
