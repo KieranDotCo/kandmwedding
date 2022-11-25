@@ -1,9 +1,44 @@
 .Home {
-  .hero-image {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url(../../assets//images/lanhydrock-bench.jpg);
-    height:700px;
+  .cali-title-text {
+    font-family: Savoye LET;
+    font-size: 40px;
+    margin: 0;
+    font-weight: normal;
+  }
+
+  .cali-desc-text {
+    font-family: Savoye LET;
+    font-size: 24px;
+  }
+
+  .home-center {
+    background-image: url(../../assets/images/large-bg-bottom-left.png),
+      url(../../assets/images/large-bg-top-right.png);
+    background-position: left bottom, right top;
+    background-repeat: no-repeat, no-repeat;
+    height: 500px;
+    padding: 0 auto;
+    .home-center-text {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .bg-top {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    top: -47px;
+    position: relative;
+  }
+
+  .bg-bottom {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: -47px;
+    position: relative;
   }
 }

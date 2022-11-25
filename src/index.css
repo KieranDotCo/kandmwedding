@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Crystal Sky Alt W05 Regular";
+  src: url("assets/fonts/crystal-sky.eot"); /* IE9*/
+  src: url("assets/fonts/crystal-sky.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("assets/fonts/crystal-sky.woff2") format("woff2"),
+    /* chrome、firefox */ url("assets/fonts/crystal-sky.ttf") format("truetype"); /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -13,9 +21,17 @@ code {
 }
 
 .caligraphy {
-  font-family: "Rochester", cursive;
+  font-family: "Crystal Sky Alt W05 Regular", "Rochester", cursive;
 }
 
 .ta-center {
   text-align: center;
+}
+
+main {
+  padding-top: 64px;
+}
+
+.bg-grey {
+  background-color: #F9FAFA;
 }
