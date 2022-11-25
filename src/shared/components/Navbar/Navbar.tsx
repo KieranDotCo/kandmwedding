@@ -43,6 +43,10 @@ const Navbar: React.FC = () => {
       url: "/",
     },
     {
+      name: "Details",
+      url: "/details",
+    },
+    {
       name: "RSVP",
       url: "/rsvp",
     },
@@ -52,7 +56,7 @@ const Navbar: React.FC = () => {
     <div className="Navbar">
       <AppBar component="nav">
         <Container maxWidth="lg">
-          <Toolbar style={{paddingLeft: 0, paddingRight: 0}}>
+          <Toolbar style={{ paddingLeft: 0, paddingRight: 0 }}>
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -65,6 +69,7 @@ const Navbar: React.FC = () => {
               variant="h6"
               component="div"
               sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+              style={{ fontFamily: "Savoye LET", fontSize: "30px" }}
             >
               Kieran & Mallory
             </Typography>
