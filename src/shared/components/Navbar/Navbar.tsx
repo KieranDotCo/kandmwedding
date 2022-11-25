@@ -41,14 +41,22 @@ const Navbar: React.FC = () => {
     {
       name: "Home",
       url: "/",
+      variant: "text",
     },
     {
       name: "Details",
       url: "/details",
+      variant: "text",
+    },
+    {
+      name: "The Wedding",
+      url: "/the-wedding",
+      variant: "text",
     },
     {
       name: "RSVP",
       url: "/rsvp",
+      variant: "outlined",
     },
   ];
 
@@ -75,7 +83,17 @@ const Navbar: React.FC = () => {
             </Typography>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {pages.map((item) => (
-                <Button key={item.name} sx={{ color: "black" }}>
+                <Button
+                  className={
+                    "nav-link " +
+                    (item.url === location.pathname ? "active" : "")
+                  }
+                  key={item.name}
+                  sx={{ color: "black", ml: 1, mr: 1 }}
+                  variant={item.variant as any}
+                  component={Link}
+                  to={item.url}
+                >
                   {item.name}
                 </Button>
               ))}

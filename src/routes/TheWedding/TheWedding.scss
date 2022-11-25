@@ -1,0 +1,34 @@
+.TheWedding {
+  .cali-title-text {
+    font-family: Savoye LET;
+    font-size: 50px;
+    margin: 0;
+    font-weight: normal;
+  }
+
+  .plain-title-text {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 7px;
+    font-weight: normal;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  .plain-text {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .vine-divider {
+
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      transform: scaleX(-1);
+
+  }
+
+  .vine-divider1 {
+    top: -25px;
+    position: relative;
+  }
+}

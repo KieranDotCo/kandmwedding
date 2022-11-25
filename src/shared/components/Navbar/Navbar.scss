@@ -11,12 +11,13 @@
     box-shadow: none;
     color: black;
 
-    a.nav-link {
+    a.nav-link.MuiButton-text {
       color: black;
       padding: 6px;
       text-align: center;
       text-transform: none;
       font-size: 1rem;
+      border-bottom: 2px solid transparent;
       &.active,
       &:hover {
         border-bottom: 2px solid black;

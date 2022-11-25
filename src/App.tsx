@@ -6,6 +6,7 @@ import Navbar from "./shared/components/Navbar/Navbar";
 import bgTop from "./assets/images/small-bg-top.png";
 import bgBottom from "./assets/images/small-bg-bottom.png";
 import Details from "./routes/Details/Details";
+import TheWedding from "./routes/TheWedding/TheWedding";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/details" element={<Details />} />
+            <Route path="/the-wedding" element={<TheWedding />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </main>
