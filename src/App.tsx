@@ -1,9 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./routes/Home/Home";
 import PageNotFound from "./routes/PageNotFound/PageNotFound";
 import Navbar from "./shared/components/Navbar/Navbar";
-import bgTop from "./assets/images/small-bg-top.png";
 import bgBottom from "./assets/images/small-bg-bottom.png";
 import Details from "./routes/Details/Details";
 import TheWedding from "./routes/TheWedding/TheWedding";
@@ -13,7 +12,7 @@ import ScrollToTop from "./shared/components/ScrollToTop/ScrollToTop";
 function App() {
   return (
     <Router>
-      <ScrollToTop/>
+      <ScrollToTop />
       <div>
         <Navbar />
         <main>
@@ -25,13 +24,12 @@ function App() {
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </main>
-        <footer className="ta-center" style={{ marginTop: "4rem" }}>
+        <footer className="ta-center">
           <img
             src={bgBottom}
             style={{
               transform: "scaleY(-1)",
               height: "50px",
-              marginTop: "4px",
             }}
             alt=""
           />

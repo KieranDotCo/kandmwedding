@@ -1,6 +1,6 @@
 .TheWedding {
   .cali-title-text {
-    font-family: Savoye LET;
+    font-family: 'Bad Script',  cursive;
     font-size: 50px;
     margin: 0;
     font-weight: normal;
@@ -30,5 +30,17 @@
   .vine-divider1 {
     top: -25px;
     position: relative;
+  }
+
+  .order-of-service {
+    width: 300px;
+    margin: 0 auto;
+    text-align: justify;
+  }
+
+  .order-text {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
   }
 }

@@ -10,10 +10,9 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import MenuIcon from "@mui/icons-material/Menu";
 import "./Navbar.scss";
 import { Link, useLocation } from "react-router-dom";
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const Navbar: React.FC = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -70,7 +69,7 @@ const Navbar: React.FC = () => {
               variant="h6"
               component="div"
               sx={{ flexGrow: 1 }}
-              style={{ fontFamily: "Savoye LET", fontSize: "36px" }}
+              style={{ fontFamily: "Bad Script, cursive", fontSize: "36px" }}
             >
               Kieran & Mallory
             </Typography>
@@ -100,7 +99,7 @@ const Navbar: React.FC = () => {
                 onClick={handleOpenNavMenu}
                 style={{color: 'black'}}
               >
-                <MoreVertIcon/>
+                <MenuIcon/>
               </IconButton>
               <Menu
                 id="basic-menu"
@@ -117,6 +116,7 @@ const Navbar: React.FC = () => {
                     sx={{ color: "black"}}
                     component={Link}
                     to={item.url}
+                    onClick={handleCloseNavMenu}
                   >
                     {item.name}
                   </MenuItem>

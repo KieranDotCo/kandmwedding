@@ -1,13 +1,13 @@
 .Details {
   .cali-title-text {
-    font-family: Savoye LET;
+    font-family: "Bad Script", cursive;
     font-size: 50px;
     margin: 0;
     font-weight: normal;
   }
 
   .plain-title-text {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     letter-spacing: 7px;
     font-weight: normal;
     font-size: 18px;
@@ -15,16 +15,14 @@
   }
 
   .plain-text {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
 
   .vine-divider {
-
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      transform: scaleX(-1);
-
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transform: scaleX(-1);
   }
 
   .vine-divider1 {
