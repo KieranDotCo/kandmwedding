@@ -13,6 +13,7 @@ import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./Navbar.scss";
 import { Link, useLocation } from "react-router-dom";
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 const Navbar: React.FC = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -65,23 +66,15 @@ const Navbar: React.FC = () => {
       <AppBar component="nav">
         <Container maxWidth="lg">
           <Toolbar style={{ paddingLeft: 0, paddingRight: 0 }}>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              sx={{ mr: 2, display: { sm: "none" } }}
-            >
-              <MenuIcon />
-            </IconButton>
             <Typography
               variant="h6"
               component="div"
-              sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-              style={{ fontFamily: "Savoye LET", fontSize: "30px" }}
+              sx={{ flexGrow: 1 }}
+              style={{ fontFamily: "Savoye LET", fontSize: "36px" }}
             >
               Kieran & Mallory
             </Typography>
-            <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            <Box sx={{ display: { xs: "none", sm: "none", md: "block" } }}>
               {pages.map((item) => (
                 <Button
                   className={
@@ -97,6 +90,38 @@ const Navbar: React.FC = () => {
                   {item.name}
                 </Button>
               ))}
+            </Box>
+            <Box sx={{ display: { xs: "block", sm: "block", md: "none" } }}>
+              <IconButton
+                id="basic-button"
+                aria-controls={anchorElNav !== null ? "basic-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={anchorElNav !== null ? "true" : undefined}
+                onClick={handleOpenNavMenu}
+                style={{color: 'black'}}
+              >
+                <MoreVertIcon/>
+              </IconButton>
+              <Menu
+                id="basic-menu"
+                anchorEl={anchorElNav}
+                open={anchorElNav !== null}
+                onClose={handleCloseNavMenu}
+                MenuListProps={{
+                  "aria-labelledby": "basic-button",
+                }}
+              >
+                {pages.map((item) => (
+                  <MenuItem
+                    key={item.name}
+                    sx={{ color: "black"}}
+                    component={Link}
+                    to={item.url}
+                  >
+                    {item.name}
+                  </MenuItem>
+                ))}
+              </Menu>
             </Box>
           </Toolbar>
         </Container>

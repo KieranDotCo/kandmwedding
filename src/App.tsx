@@ -7,10 +7,13 @@ import bgTop from "./assets/images/small-bg-top.png";
 import bgBottom from "./assets/images/small-bg-bottom.png";
 import Details from "./routes/Details/Details";
 import TheWedding from "./routes/TheWedding/TheWedding";
+import RSVP from "./routes/RSVP/RSVP";
+import ScrollToTop from "./shared/components/ScrollToTop/ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop/>
       <div>
         <Navbar />
         <main>
@@ -18,6 +21,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/details" element={<Details />} />
             <Route path="/the-wedding" element={<TheWedding />} />
+            <Route path="/rsvp" element={<RSVP />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </main>

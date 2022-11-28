@@ -42,3 +42,11 @@
     position: relative;
   }
 }
+
+@media (max-width: 1060px) {
+  .Home {
+    .home-center {
+      background: none;
+    }
+  }
+}

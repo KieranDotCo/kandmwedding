@@ -26,6 +26,10 @@ code {
   text-align: center;
 }
 
+.ta-right {
+  text-align: right;
+}
+
 main {
   padding-top: 64px;
 }
@@ -37,4 +41,18 @@ main {
 a {
   font-family: 'Inter', sans-serif !important;
   text-transform: none !important;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+footer {
+  border-top: 1px solid rgba(229, 231, 235, 1);
+  padding-top: 0.5rem;
+}
+
+.mt1 {
+  margin-top: 1rem !important;
 }
