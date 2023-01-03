@@ -8,6 +8,7 @@ import Details from "./routes/Details/Details";
 import TheWedding from "./routes/TheWedding/TheWedding";
 import RSVP from "./routes/RSVP/RSVP";
 import ScrollToTop from "./shared/components/ScrollToTop/ScrollToTop";
+import Invite from "./routes/Invite/Invite";
 
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/details" element={<Details />} />
             <Route path="/the-wedding" element={<TheWedding />} />
-            <Route path="/rsvp" element={<RSVP />} />
+            <Route path="/rsvp/" element={<RSVP />} />
+            <Route path="/rsvp/:id" element={<RSVP />} />
+            <Route path="/invite/:id" element={<Invite />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </main>

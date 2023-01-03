@@ -16,9 +16,11 @@ const TheWedding: React.FC = () => {
           >
             The Big Day
           </h2>
-          <strong>When</strong>
-          <p className="ta-center">Monday 22nd May 2023, 13:30</p>
-          <strong>Where</strong>
+          <strong>Date</strong>
+          <p className="ta-center">Monday 22nd May 2023</p>
+          <strong>Time</strong>
+          <p className="ta-center">1:30pm</p>
+          <strong>Address</strong>
           <p>
             <address style={{ fontStyle: "normal" }}>
               Sheene Mill
@@ -29,8 +31,6 @@ const TheWedding: React.FC = () => {
               <br /> SG8 6DX
             </address>
           </p>
-          <strong>Dress Code</strong>
-          <p className="ta-center">Smart</p>
           <br />
           <br />
           <br />

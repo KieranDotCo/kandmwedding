@@ -23,6 +23,8 @@ import QueueMusicIcon from "@mui/icons-material/QueueMusic";
 import PersonIcon from "@mui/icons-material/Person";
 import RestaurantIcon from "@mui/icons-material/Restaurant";
 import bgBottom from "../../assets/images/small-bg-bottom.png";
+import { useParams } from "react-router-dom";
+import { INVITES } from "../../shared/Invites";
 
 const ValidationSchema = Yup.object().shape({
   guests: Yup.array().of(
@@ -42,7 +44,39 @@ enum SentStatus {
 }
 
 const RSVP: React.FC = () => {
+  const { id } = useParams();
   const [sent, setSent] = React.useState(SentStatus.Unsent);
+  const [formValues, setFormValues] = React.useState({
+    guests: [
+      {
+        name: "",
+        diet: "",
+      },
+    ],
+    attending: "yes",
+    email: "",
+    phone: "",
+    song: "",
+  });
+
+  React.useEffect(() => {
+    const _invitee = INVITES.find((i) => i.id === id);
+
+    if (_invitee) {
+      let invite = {
+        guests: [] as any,
+        attending: "yes",
+        email: "",
+        phone: "",
+        song: "",
+      };
+      _invitee.names.forEach((i) => {
+        invite.guests.push({ name: i, diet: "" });
+      });
+      setFormValues(invite);
+    }
+  }, [id]);
+
   return (
     <div className="RSVP bg-grey">
       <Container maxWidth="lg" style={{ paddingBottom: "1rem" }}>
@@ -82,18 +116,8 @@ const RSVP: React.FC = () => {
             <p>Done!</p>
           ) : (
             <Formik
-              initialValues={{
-                guests: [
-                  {
-                    name: "",
-                    diet: "",
-                  },
-                ],
-                attending: "yes",
-                email: "",
-                phone: "",
-                song: "",
-              }}
+              enableReinitialize
+              initialValues={formValues}
               onSubmit={(values) => {
                 axios({
                   method: "POST",
@@ -117,20 +141,36 @@ const RSVP: React.FC = () => {
                       <>
                         {values.guests.map((guest, index) => {
                           return (
-                            <Grid container key={index} spacing={1}>
-                              <Grid item xs={12}>
+                            <Grid
+                              container
+                              key={index}
+                              spacing={1}
+                              className="mb1"
+                            >
+                              <Grid item xs={6}>
                                 <FormLabel>Guest {index + 1}</FormLabel>
+                              </Grid>
+                              <Grid item xs={6} className="ta-right">
+                                <Button
+                                  color="error"
+                                  size="small"
+                                  className="tt-none"
+                                  onClick={() => arrayHelpers.remove(index)}
+                                >
+                                  Remove Guest
+                                </Button>
                               </Grid>
                               <Grid item xs={12} sm={12} md={12}>
                                 <Field
                                   component={TextField}
                                   name={`guests[${index}].name`}
-                                  label={` Name`}
+                                  label={`Name`}
                                   margin="dense"
                                   type="text"
                                   variant="outlined"
                                   fullWidth
                                   required={true}
+                                  placeholder="Name"
                                   InputProps={{
                                     startAdornment: (
                                       <InputAdornment position="start">
@@ -151,12 +191,13 @@ const RSVP: React.FC = () => {
                                 <Field
                                   component={TextField}
                                   name={`guests[${index}].diet`}
-                                  label={` Dietary Requirements/Allergies`}
+                                  label={`Dietary Requirements/Allergies`}
                                   margin="dense"
                                   type="text"
                                   variant="outlined"
                                   fullWidth
                                   required={true}
+                                  placeholder="Dietary Requirements/Allergies"
                                   InputProps={{
                                     startAdornment: (
                                       <InputAdornment position="start">
@@ -202,7 +243,31 @@ const RSVP: React.FC = () => {
                   </FormControl>
                   <br />
                   {values.attending === "yes" ? (
-                    <Grid container spacing={1}>
+                    <FormControl className="mt1">
+                      <FormLabel required>
+                        Which part of the day will you be attending?
+                      </FormLabel>
+                      <Field component={RadioGroup} name="event">
+                        <FormControlLabel
+                          value="day-evening"
+                          control={<Radio />}
+                          label="Day + Evening"
+                        />
+                        <FormControlLabel
+                          value="day"
+                          control={<Radio />}
+                          label="Day"
+                        />
+                        <FormControlLabel
+                          value="evening"
+                          control={<Radio />}
+                          label="Evening"
+                        />
+                      </Field>
+                    </FormControl>
+                  ) : null}
+                  {values.attending === "yes" ? (
+                    <Grid container spacing={1} className="mt1">
                       <Grid item sm={12} md={9} lg={6}>
                         <Field
                           component={TextField}
@@ -211,6 +276,7 @@ const RSVP: React.FC = () => {
                           margin="dense"
                           type="text"
                           variant="outlined"
+                          placeholder="Email Address"
                           fullWidth
                           required={true}
                           InputProps={{
@@ -230,6 +296,7 @@ const RSVP: React.FC = () => {
                           margin="dense"
                           type="text"
                           variant="outlined"
+                          placeholder={`Contact Number`}
                           fullWidth
                           required={true}
                           InputProps={{
@@ -249,6 +316,7 @@ const RSVP: React.FC = () => {
                           margin="dense"
                           type="text"
                           variant="outlined"
+                          placeholder={`Enter a song you'd like the DJ to play`}
                           fullWidth
                           InputProps={{
                             startAdornment: (

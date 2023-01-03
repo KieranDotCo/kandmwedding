@@ -31,7 +31,7 @@ const Home: React.FC = (props) => {
             alignItems="center"
             justifyContent="center"
           >
-            <Grid item md={6}>
+            <Grid item md={6} order={{sm: 2, md: 1}}>
               <h3 className="cali-title-text ">Our Venue</h3>
               <p className="cali-desc-text">
                 Steeped in history, Sheene Mill is a magnificent 16th Century
@@ -49,7 +49,7 @@ const Home: React.FC = (props) => {
                 </address>
               </p>
             </Grid>
-            <Grid item md={6}>
+            <Grid item md={6} order={{sm: 1, md: 2}}>
               <img
                 src={sheeneMillFront}
                 alt="lanhydrock bench"
@@ -74,7 +74,7 @@ const Home: React.FC = (props) => {
           alignItems="center"
           justifyContent="center"
         >
-          <Grid item md={6}>
+          <Grid item md={6} >
             <img
               src={sheeneMillPav}
               alt="lanhydrock bench"
