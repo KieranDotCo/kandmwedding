@@ -57,6 +57,10 @@ footer {
   padding-top: 0.5rem;
 }
 
+.mt0 {
+  margin-top: 0 !important;
+}
+
 .mt1 {
   margin-top: 1rem !important;
 }

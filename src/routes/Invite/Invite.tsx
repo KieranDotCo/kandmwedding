@@ -5,14 +5,12 @@ import { INVITES } from "../../shared/Invites";
 import { Invitee } from "../../shared/models/Invitee";
 import PageNotFound from "../PageNotFound/PageNotFound";
 import "./Invite.scss";
-import sheeneMillFront from "../../assets/images/sheene-mill-front.jpg";
 import bgTop from "../../assets/images/small-bg-top.png";
 import bgBottom from "../../assets/images/small-bg-bottom.png";
 
 const Invite: React.FC = () => {
   const { id } = useParams();
   const [invitee, setInvitee] = React.useState<Invitee>();
-  const [open, setOpen] = React.useState(false);
 
   React.useEffect(() => {
     const _invitee = INVITES.find((i) => i.id === id);
@@ -28,64 +26,7 @@ const Invite: React.FC = () => {
 
   return (
     <div className="Invite">
-      <div className="bg-grey">
-        <Container
-          maxWidth="lg"
-          style={{ paddingTop: "1rem", paddingBottom: "1rem" }}
-        >
-          <div className={`envelope flip-card ${open ? "open" : ""}`}>
-            <div className="flip-card-inner">
-              <div className="flip-card-front">
-                <div className="address ta-center">
-                  <img src={bgTop} alt="bg top" className="bg-top" />
-                  <p>To</p>
-                  {invitee.names.map((i) => {
-                    return <p key={i}>{i}</p>;
-                  })}
-                </div>
-                <Button
-                  className="tt-none"
-                  variant="contained"
-                  onClick={() => setOpen(true)}
-                >
-                  Open
-                </Button>
-                <br />
-                <br />
-                <img src={bgBottom} alt="bg bottom" className="bg-bottom" />
-                <img
-                  src={sheeneMillFront}
-                  alt="Sheene Mill Stamp"
-                  className="stamp"
-                />
-              </div>
-              <div className="flip-card-back">
-                <div className="flip-card-back-content">
-                  <img src={bgTop} alt="bg top" className="bg-top" />
-                  <h2>To {invitee.names.join(" & ")}</h2>
-                  <p>
-                    You are formally invited to the wedding of Kieran and
-                    Mallory at the Sheene Mill on the 22nd May 2023.
-                  </p>
-                  <Button
-                    variant="contained"
-                    component={Link}
-                    to={`/rsvp/${id}`}
-                    color="primary"
-                  >
-                    RSVP
-                  </Button>
-                  <br />
-                  <br />
-                  <img src={bgBottom} alt="bg bottom" className="bg-bottom" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </div>
-
-      <div style={{ paddingTop: "1rem", paddingBottom: "1rem" }}>
+      <div style={{ paddingTop: "2rem", paddingBottom: "2rem" }} className="bg-grey">
         <Container
           maxWidth="lg"
           style={{ paddingTop: "1rem", paddingBottom: "1rem" }}
@@ -97,6 +38,7 @@ const Invite: React.FC = () => {
                 <div className="open-env">
                   <label className="top" htmlFor="open-env"></label>
                   <div className="content">
+                  <img src={bgTop} alt="bg top" className="bg-top" />
                     <h2>To {invitee.names.join(" & ")}</h2>
                     <p>
                       You are formally invited to the wedding of Kieran and
@@ -110,6 +52,9 @@ const Invite: React.FC = () => {
                     >
                       RSVP
                     </Button>
+                    <br/>
+                    <br/>
+                    <img src={bgBottom} alt="bg top" className="bg-bottom" />
                     <br />
                     <br />
                   </div>
