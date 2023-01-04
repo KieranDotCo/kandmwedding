@@ -4,8 +4,6 @@ import bgBottom from "../../assets/images/small-bg-bottom.png";
 import { Container } from "@mui/material";
 
 const TheWedding: React.FC = () => {
-  const lipsum =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ";
   return (
     <div className="TheWedding">
       <div className="bg-grey">
@@ -68,9 +66,20 @@ const TheWedding: React.FC = () => {
             alt="vine divider"
             className="vine-divider vine-divider1"
           />
-          <h2 className="plain-title-text ta-center">Transportation</h2>
+          <h2
+            className="cali-title-text ta-center"
+            style={{ paddingTop: "1rem", paddingBottom: "1rem" }}
+          >
+            Food/Allergies
+          </h2>
           <p>
-            {lipsum} {lipsum}
+            A BBQ Wedding Breakfast will be provided for day guests, if you have
+            any allergies or dietary requirements please let us know when
+            completing your RSVP. If you've already completed your RSVP and haven't advised us of dietary requirements please
+            contact us as soon as possible.
+            <br/>
+            <br/>
+            Evening food will also be provided, please let us know of any dietary requirements.
           </p>
         </Container>
       </div>
