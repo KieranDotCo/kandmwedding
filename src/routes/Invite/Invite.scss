@@ -143,3 +143,66 @@ $gg: #eff1f4;
   }
 }
 
+.envelope {
+  width: 500px;
+  height: 300px;
+  background-color: darken($gg, 15%);
+  margin: 300px auto;
+  position: relative;
+  z-index: 1;
+}
+.envelope:before {
+  content: "";
+  top: 0;
+  right: 0;
+  z-index: 3;
+  position: absolute;
+  border-left: 500px solid transparent;
+  border-bottom: 300px solid darken($gg, 5%);
+}
+.envelope:after {
+  content: "";
+  top: 0;
+  left: 0;
+  z-index: 3;
+  position: absolute;
+  border-right: 500px solid transparent;
+  border-bottom: 300px solid darken($gg, 5%);
+}
+.back {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  transform-origin: top;
+  border-top: 150px solid darken($gg, 10%);
+  border-left: 250px solid transparent;
+  border-right: 250px solid transparent;
+  transition: all 1s ease-in-out;
+  transform: rotateX(180deg);
+}
+.letter {
+  position: relative;
+  top: 0;
+  padding: 20px 10px;
+  width: 400px;
+  height: 200px;
+  overflow: hidden;
+  z-index: 2;
+  margin: 0 auto;
+  background-color: #fff;
+  transition: all 1s ease-in-out;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 3px;
+}
+
+.envelope:hover .back {
+  //transform: rotateX(180deg);
+}
+.envelope:hover .letter {
+  top: -300px;
+  height: 500px;
+}
+.letter:hover button {
+  z-index: 10;
+  transition: all 0.5s ease-in-out;
+}
