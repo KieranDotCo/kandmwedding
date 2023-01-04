@@ -35,38 +35,6 @@ const Invite: React.FC = () => {
           style={{ paddingTop: "1rem", paddingBottom: "1rem" }}
           className="envbox-container"
         >
-          {/* <div className="envbox">
-            <div className="env">
-              <label htmlFor="open-env">
-                <div className="open-env">
-                  <label className="top" htmlFor="open-env"></label>
-                  <div className="content">
-                  <img src={bgTop} alt="bg top" className="bg-top" />
-                    <h2>To {invitee.names.join(" & ")}</h2>
-                    <p>
-                      You are formally invited to the wedding of Kieran and
-                      Mallory at the Sheene Mill on the 22nd May 2023.
-                    </p>
-                    <Button
-                      variant="contained"
-                      component={Link}
-                      to={`/rsvp/${id}`}
-                      color="primary"
-                    >
-                      RSVP
-                    </Button>
-                    <br/>
-                    <br/>
-                    <img src={bgBottom} alt="bg top" className="bg-bottom" />
-                    <br />
-                    <br />
-                  </div>
-                  <div className="rest"></div>
-                </div>
-              </label>
-            </div>
-          </div> */}
-
           <div className="envelope" title="">
             <div className="back"></div>
             <form className="letter ta-center">
