@@ -127,7 +127,7 @@ const RSVP: React.FC = () => {
           className="ta-center"
           style={{ paddingBottom: "1rem" }}
         >
-          Please complete by XX-XX-XXXX
+          Please complete by 28-02-2023
         </Typography>
         <Paper variant="outlined" style={{ padding: "2rem 1rem" }}>
           {sent === SentStatus.Sent ? (

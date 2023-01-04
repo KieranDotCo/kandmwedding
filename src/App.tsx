@@ -53,7 +53,7 @@ function App() {
               verticalAlign: "bottom",
             }}
           >
-            &copy; 2022 Kieran & Mallory
+            &copy; {new Date().getFullYear()} Kieran & Mallory
           </p>
           <img
             src={bgBottom}
