@@ -1,8 +1,10 @@
 import {
+  Alert,
   Button,
   Container,
   FormControl,
   FormControlLabel,
+  FormHelperText,
   FormLabel,
   Grid,
   InputAdornment,
@@ -11,8 +13,8 @@ import {
   Typography,
 } from "@mui/material";
 import axios from "axios";
-import { Field, FieldArray, Form, Formik } from "formik";
-import { RadioGroup, TextField } from "formik-mui";
+import { ErrorMessage, Field, FieldArray, Form, Formik } from "formik";
+import { CheckboxWithLabel, RadioGroup, TextField } from "formik-mui";
 import React from "react";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
@@ -35,6 +37,20 @@ const ValidationSchema = Yup.object().shape({
   ),
   email: Yup.string().required("Please enter an email address."),
   phone: Yup.string().required("Please enter a contact number."),
+  attending: Yup.string(),
+  part: Yup.array().test(
+    "part-is-required",
+    "Please select which part(s) of the day you will attend.",
+    function (value: any) {
+      if (this.parent.attending === "yes") {
+        if (!value || value.length === 0) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+  ),
 });
 
 enum SentStatus {
@@ -57,6 +73,7 @@ const RSVP: React.FC = () => {
     email: "",
     phone: "",
     song: "",
+    part: [],
   });
 
   React.useEffect(() => {
@@ -69,6 +86,7 @@ const RSVP: React.FC = () => {
         email: "",
         phone: "",
         song: "",
+        part: [] as any,
       };
       _invitee.names.forEach((i) => {
         invite.guests.push({ name: i, diet: "" });
@@ -113,7 +131,34 @@ const RSVP: React.FC = () => {
         </Typography>
         <Paper variant="outlined" style={{ padding: "2rem 1rem" }}>
           {sent === SentStatus.Sent ? (
-            <p>Done!</p>
+            <div className="ta-center">
+              <img
+                src={bgBottom}
+                style={{
+                  transform: "scaleY(-1)",
+                  height: "50px",
+                  margin: "auto 0",
+                }}
+                alt=""
+              />
+              <h2
+                className="cali-title-text ta-center"
+                style={{ paddingTop: "1rem", paddingBottom: "0rem" }}
+              >
+                Thank You!
+              </h2>
+              <p className="ta-center">Your response has been received.</p>
+              <br />
+              <img
+                src={bgBottom}
+                style={{
+                  transform: "scaleY(-1) scaleX(-1)",
+                  height: "50px",
+                  marginLeft: "0.5rem",
+                }}
+                alt=""
+              />
+            </div>
           ) : (
             <Formik
               enableReinitialize
@@ -135,6 +180,15 @@ const RSVP: React.FC = () => {
             >
               {({ errors, touched, values }) => (
                 <Form noValidate={true}>
+                  {sent === SentStatus.Failed ? (
+                    <>
+                      <Alert  severity="error">
+                        There was an error submitting your response, please try
+                        again.
+                      </Alert>
+                      <br />
+                    </>
+                  ) : null}
                   <FieldArray
                     name="guests"
                     render={(arrayHelpers) => (
@@ -226,46 +280,55 @@ const RSVP: React.FC = () => {
                   />
                   <br />
                   <br />
-                  <FormControl>
-                    <FormLabel required>Attending?</FormLabel>
-                    <Field component={RadioGroup} name="attending">
-                      <FormControlLabel
-                        value="yes"
-                        control={<Radio />}
-                        label="Accepts with Pleasure"
-                      />
-                      <FormControlLabel
-                        value="no"
-                        control={<Radio />}
-                        label="Declines with Regrets"
-                      />
-                    </Field>
-                  </FormControl>
-                  <br />
-                  {values.attending === "yes" ? (
-                    <FormControl className="mt1">
-                      <FormLabel required>
-                        Which part of the day will you be attending?
-                      </FormLabel>
-                      <Field component={RadioGroup} name="event">
-                        <FormControlLabel
-                          value="day-evening"
-                          control={<Radio />}
-                          label="Day + Evening"
+                  <Grid container>
+                    <Grid item xs={6}>
+                      <FormControl>
+                        <FormLabel required>Attending?</FormLabel>
+                        <Field component={RadioGroup} name="attending">
+                          <FormControlLabel
+                            value="yes"
+                            control={<Radio />}
+                            label="Accepts with Pleasure"
+                          />
+                          <FormControlLabel
+                            value="no"
+                            control={<Radio />}
+                            label="Declines with Regrets"
+                          />
+                        </Field>
+                      </FormControl>
+                    </Grid>
+                    {values.attending === "yes" ? (
+                      <Grid item xs={6}>
+                        <FormControl>
+                          <FormLabel required error={!!errors.part}>
+                            Which part(s) of the day will you be attending?
+                          </FormLabel>
+                          <Field
+                            component={CheckboxWithLabel}
+                            type="checkbox"
+                            name="part"
+                            value="day"
+                            Label={{ label: "Day" }}
+                          />
+                          <Field
+                            component={CheckboxWithLabel}
+                            type="checkbox"
+                            name="part"
+                            value="evening"
+                            Label={{ label: "Evening" }}
+                          />
+                        </FormControl>
+                        <ErrorMessage
+                          name="part"
+                          render={(msg) => (
+                            <FormHelperText error={true}>{msg}</FormHelperText>
+                          )}
                         />
-                        <FormControlLabel
-                          value="day"
-                          control={<Radio />}
-                          label="Day"
-                        />
-                        <FormControlLabel
-                          value="evening"
-                          control={<Radio />}
-                          label="Evening"
-                        />
-                      </Field>
-                    </FormControl>
-                  ) : null}
+                      </Grid>
+                    ) : null}
+                  </Grid>
+
                   {values.attending === "yes" ? (
                     <Grid container spacing={1} className="mt1">
                       <Grid item sm={12} md={9} lg={6}>
