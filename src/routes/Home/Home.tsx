@@ -96,7 +96,7 @@ const Home: React.FC = (props) => {
               <br />
               Evening Guests Arrival 7pm
               <br />
-              Stumble home at 11:45pm
+              Last Dance at 11:55pm
             </p>
           </Grid>
         </Grid>
