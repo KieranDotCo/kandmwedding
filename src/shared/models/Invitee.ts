@@ -1,4 +1,5 @@
 export interface Invitee {
   id: string,
-  names: string[]
+  names: string[],
+  part: string
 }

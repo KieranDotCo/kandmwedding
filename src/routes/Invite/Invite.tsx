@@ -39,11 +39,21 @@ const Invite: React.FC = () => {
             <div className="back"></div>
             <form className="letter ta-center">
               <img src={bgTop} alt="bg top" className="bg-top" />
-              <h2>To {invitee.names.join(" & ")}</h2>
-              <p>
-                You are formally invited to the wedding of Kieran and Mallory at
-                the Sheene Mill on the 22nd May 2023.
+              <h2 className="mt025 mb025">To {invitee.names.join(" & ")}</h2>
+              <p className="mt05 mb05">
+                Kieran Whiteman
+                <br />
+                &
+                <br />
+                Mallory James
               </p>
+              <p className="mt05 mb05">
+                Invite you to celebrate their marriage on <br />
+                22nd May 2023 at {invitee.part === "day" ? "2:00pm" : "7:00pm"}
+                <br />
+                At Sheene Mill, Melbourn, SG8 6DX
+              </p>
+              <p className="mt05 mb05">RSVP By 28-02-2023</p>
               <Button
                 variant="contained"
                 component={Link}

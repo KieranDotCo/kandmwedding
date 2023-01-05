@@ -4,7 +4,7 @@ $gg: #eff1f4;
   width: 500px;
   height: 300px;
   background-color: darken($gg, 15%);
-  margin: 300px auto;
+  margin: 400px auto 0 auto;
   position: relative;
   z-index: 1;
   animation: envelopeslidein 2s;
@@ -74,8 +74,8 @@ $gg: #eff1f4;
     top: 0px;
   }
   to {
-    height: 500px;
-    top: -300px;
+    height: 700px;
+    top: -400px;
   }
 }
 
@@ -117,5 +117,77 @@ $gg: #eff1f4;
     border-top: 150px solid darken($gg, 10%);
     border-left: 200px solid transparent;
     border-right: 200px solid transparent;
+  }
+}
+
+@media (max-width: 400px) {
+  .Invite {
+    .MuiContainer-root {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .envelope {
+    width: 350px;
+  }
+  .envelope:before {
+    content: "";
+    top: 0;
+    right: 0;
+    z-index: 3;
+    position: absolute;
+    border-left: 300px solid transparent;
+    border-bottom: 300px solid darken($gg, 5%);
+  }
+
+  .envelope:after {
+    border-right: 300px solid transparent;
+    border-bottom: 300px solid darken($gg, 5%);
+  }
+
+  .letter {
+    width: 340px;
+  }
+
+  .back {
+    border-top: 150px solid darken($gg, 10%);
+    border-left: 175px solid transparent;
+    border-right: 175px solid transparent;
+  }
+}
+
+@media (max-width: 350px) {
+  .Invite {
+    .MuiContainer-root {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .envelope {
+    width: 300px;
+  }
+  .envelope:before {
+    content: "";
+    top: 0;
+    right: 0;
+    z-index: 3;
+    position: absolute;
+    border-left: 300px solid transparent;
+    border-bottom: 300px solid darken($gg, 5%);
+  }
+
+  .envelope:after {
+    border-right: 300px solid transparent;
+    border-bottom: 300px solid darken($gg, 5%);
+  }
+
+  .letter {
+    width: 290px;
+  }
+
+  .back {
+    border-top: 150px solid darken($gg, 10%);
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
   }
 }

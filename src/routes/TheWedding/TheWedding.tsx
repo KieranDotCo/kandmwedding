@@ -16,9 +16,9 @@ const TheWedding: React.FC = () => {
           </h2>
           <strong>Date</strong>
           <p className="ta-center">Monday 22nd May 2023</p>
-          <strong>Time</strong>
+          <strong>Guest Arrive</strong>
           <p className="ta-center">1:30pm</p>
-          <strong>Address</strong>
+          <strong>Venue Address</strong>
           <p>
             <address style={{ fontStyle: "normal" }}>
               Sheene Mill
@@ -47,12 +47,12 @@ const TheWedding: React.FC = () => {
           Order of Service
         </h2>
         <div className="order-of-service">
-          <h6 className="order-text">13:30 - Day Guests Arrival</h6>
+          <h6 className="order-text">13:30 - Day Guests Arrive</h6>
           <h6 className="order-text">14:00 - Ceremony</h6>
-          <h6 className="order-text">14:30 - Drinks Reception + Canapes</h6>
+          <h6 className="order-text">14:30 - Drinks Reception</h6>
           <h6 className="order-text">16:00 - Seated for Meal</h6>
-          <h6 className="order-text">19:00 - Evening Guests Arrival</h6>
-          <h6 className="order-text">19:30 - Cake Cutting</h6>
+          <h6 className="order-text">19:00 - Evening Guests Arrive</h6>
+          <h6 className="order-text">19:30 - Cutting the Cake</h6>
           <h6 className="order-text">19:30 - First Dance</h6>
           <h6 className="order-text">20:30 - Evening Food</h6>
           <h6 className="order-text">23:30 - Finish</h6>
@@ -72,7 +72,7 @@ const TheWedding: React.FC = () => {
           >
             Food/Allergies
           </h2>
-          <p>
+          <p className="ta-center">
             A BBQ Wedding Breakfast will be provided for day guests, if you have
             any allergies or dietary requirements please let us know when
             completing your RSVP. If you've already completed your RSVP and haven't advised us of dietary requirements please

@@ -43,6 +43,7 @@ function App() {
               height: "50px",
             }}
             alt=""
+            className="footer-img"
           />
           <p
             style={{
@@ -59,6 +60,7 @@ function App() {
             src={bgBottom}
             style={{ transform: "scaleY(-1) scaleX(-1)", height: "50px" }}
             alt=""
+            className="footer-img"
           />
         </footer>
       </div>

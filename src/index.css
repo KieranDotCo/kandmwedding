@@ -66,6 +66,21 @@ footer {
 .mt0 {
   margin-top: 0 !important;
 }
+.mt025 {
+  margin-top: 0.25rem !important;
+}
+
+.mb025 {
+  margin-bottom: 0.25rem !important;
+}
+
+.mt05 {
+  margin-top: 0.5rem !important;
+}
+
+.mb05 {
+  margin-bottom: 0.5rem !important;
+}
 
 .mt1 {
   margin-top: 1rem !important;
@@ -81,4 +96,11 @@ footer {
 
 .caligraphy-text {
   font-family: 'Bad Script', cursive;
+}
+
+@media (max-width: 410px) {
+  .footer-img {
+    display: block;
+    margin: 0 auto;
+  }
 }

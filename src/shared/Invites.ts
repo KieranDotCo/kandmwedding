@@ -4,6 +4,7 @@ export const INVITES = [
     names: [
       'George Lee',
       '+1'
-    ]
+    ],
+    part: 'day'
   }
 ]

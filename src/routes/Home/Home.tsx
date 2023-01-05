@@ -31,7 +31,7 @@ const Home: React.FC = (props) => {
             alignItems="center"
             justifyContent="center"
           >
-            <Grid item md={6} order={{sm: 2, md: 1}}>
+            <Grid item md={6} order={{sm: 2, md: 1}} className="ta-center">
               <h3 className="cali-title-text ">Our Venue</h3>
               <p className="cali-desc-text">
                 Steeped in history, Sheene Mill is a magnificent 16th Century
@@ -85,7 +85,7 @@ const Home: React.FC = (props) => {
               }}
             />
           </Grid>
-          <Grid item md={6}>
+          <Grid item md={6} className="ta-center">
             <h3 className="cali-title-text">Key Information</h3>
             <p className="cali-desc-text">
               If the weather is good the wedding will take place outside, please

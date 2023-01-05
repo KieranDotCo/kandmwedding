@@ -124,8 +124,8 @@ const Details: React.FC = () => {
         <h2 className="plain-title-text ta-center">By Car</h2>
         <p>
           Sheene Mill can be easily accessed by road. The venue is just off the
-          A10 from Royston heading to Cambridge. There is ample parking at the
-          venue but please do not park and leave your car at the venue overnight
+          A10 from Royston heading to Cambridge. There is parking at the
+          venue but we ask that you do not leave your car parked at the venue overnight
           unless you are staying at the venue.
         </p>
         <br />
@@ -139,10 +139,7 @@ const Details: React.FC = () => {
         <h2 className="plain-title-text ta-center">By Taxi</h2>
         <p>
           We recommend that you book your taxis in advance, as the venue is not
-          located in a large town taxis may not be available on demand on the
-          day of the wedding. There are Uber drivers in the area but again as
-          the venue is not in a large town there may not be any available
-          drivers on the day. Below are list of recommended taxi firms.
+          located in a large town taxis may not be available on demand. Below are list of recommended taxi firms.
           <ul>
             {taxis.map((taxi) => {
               return (
@@ -161,7 +158,7 @@ const Details: React.FC = () => {
             alt="vine divider"
             className="vine-divider vine-divider1"
           />
-          <h2 className="plain-title-text ta-center">Accomodation</h2>
+          <h2 className="plain-title-text ta-center">ACCOMMODATION</h2>
           <p>
             There are no rooms available at the venue, but there are many
             apartments, hotels and B&B's in the area. Below are a few
