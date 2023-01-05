@@ -31,25 +31,24 @@ const Home: React.FC = (props) => {
             alignItems="center"
             justifyContent="center"
           >
-            <Grid item md={6} order={{sm: 2, md: 1}} className="ta-center">
+            <Grid item md={6} order={{ sm: 2, md: 1 }} className="ta-center">
               <h3 className="cali-title-text ">Our Venue</h3>
               <p className="cali-desc-text">
                 Steeped in history, Sheene Mill is a magnificent 16th Century
                 Mill House set on the River Mel. With outstanding views over the
                 old mill pond and Cambridgeshire countryside.
                 <br />
-                <br />
-                <address style={{ fontStyle: "normal" }}>
-                  Sheene Mill
-                  <br />
-                  37-39 Station Road
-                  <br /> Melbourn
-                  <br /> Royston
-                  <br /> SG8 6DX
-                </address>
               </p>
+              <address className="cali-desc-text" style={{ fontStyle: "normal" }}>
+                Sheene Mill
+                <br />
+                37-39 Station Road
+                <br /> Melbourn
+                <br /> Royston
+                <br /> SG8 6DX
+              </address>
             </Grid>
-            <Grid item md={6} order={{sm: 1, md: 2}}>
+            <Grid item md={6} order={{ sm: 1, md: 2 }}>
               <img
                 src={sheeneMillFront}
                 alt="lanhydrock bench"
@@ -74,7 +73,7 @@ const Home: React.FC = (props) => {
           alignItems="center"
           justifyContent="center"
         >
-          <Grid item md={6} >
+          <Grid item md={6}>
             <img
               src={sheeneMillPav}
               alt="lanhydrock bench"
@@ -89,7 +88,9 @@ const Home: React.FC = (props) => {
             <h3 className="cali-title-text">Key Information</h3>
             <p className="cali-desc-text">
               If the weather is good the wedding will take place outside, please
-              dress smart and appropriately.<br/><br/> Guest Arrival from 1:30pm
+              dress smart and appropriately.
+              <br />
+              <br /> Guest Arrival from 1:30pm
               <br />
               Ceremony Begins at 2pm
               <br />

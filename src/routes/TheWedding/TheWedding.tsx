@@ -19,16 +19,14 @@ const TheWedding: React.FC = () => {
           <strong>Guest Arrive</strong>
           <p className="ta-center">1:30pm</p>
           <strong>Venue Address</strong>
-          <p>
-            <address style={{ fontStyle: "normal" }}>
-              Sheene Mill
-              <br />
-              37-39 Station Road
-              <br /> Melbourn
-              <br /> Royston
-              <br /> SG8 6DX
-            </address>
-          </p>
+          <address style={{ fontStyle: "normal" }}>
+            Sheene Mill
+            <br />
+            37-39 Station Road
+            <br /> Melbourn
+            <br /> Royston
+            <br /> SG8 6DX
+          </address>
           <br />
           <br />
           <br />
@@ -75,11 +73,13 @@ const TheWedding: React.FC = () => {
           <p className="ta-center">
             A BBQ Wedding Breakfast will be provided for day guests, if you have
             any allergies or dietary requirements please let us know when
-            completing your RSVP. If you've already completed your RSVP and haven't advised us of dietary requirements please
-            contact us as soon as possible.
-            <br/>
-            <br/>
-            Evening food will also be provided, please let us know of any dietary requirements.
+            completing your RSVP. If you've already completed your RSVP and
+            haven't advised us of dietary requirements please contact us as soon
+            as possible.
+            <br />
+            <br />
+            Evening food will also be provided, please let us know of any
+            dietary requirements.
           </p>
         </Container>
       </div>

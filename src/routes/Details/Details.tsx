@@ -188,16 +188,16 @@ const Details: React.FC = () => {
           We recommend that you book your taxis in advance, as the venue is not
           located in a large town taxis may not be available on demand. Below
           are list of recommended taxi firms.
-          <ul>
-            {taxis.map((taxi) => {
-              return (
-                <li key={taxi.name}>
-                  <Link href={taxi.url}>{taxi.name}</Link>
-                </li>
-              );
-            })}
-          </ul>
         </p>
+        <ul>
+          {taxis.map((taxi) => {
+            return (
+              <li key={taxi.name}>
+                <Link href={taxi.url}>{taxi.name}</Link>
+              </li>
+            );
+          })}
+        </ul>
       </Container>
       <div className="bg-grey">
         <Container maxWidth="lg" style={{ paddingBottom: "2rem" }}>
