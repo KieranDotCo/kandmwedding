@@ -82,12 +82,59 @@ const Details: React.FC = () => {
     },
     {
       type: "Hotel",
+      name: "Premier Inn - Letchworth",
+      address: "Station Rd, Letchworth Garden City SG6 3BQ",
+      url: "https://www.premierinn.com/gb/en/hotels/england/hertfordshire/letchworth-garden-city/letchworth-garden-city.html?cid=GLBC_LETGAR",
+      rooms: "Double/Twin/Family Rooms",
+      rates: "£37-£62",
+      parking: "£8",
+    },
+    {
+      type: "Hotel",
       name: "Travelodge Cambridge Fourwentways",
       address: "A11 Fourwentways, Abington, CB21 6AP, United Kingdom",
       url: "https://www.travelodge.co.uk/hotels/19/Cambridge-Fourwentways-hotel?checkIn=22/05/2023&checkOut=23/05/2023&rooms[0][adults]=2&rooms[0][children]=0&sb=1",
       rooms: "Double Room",
       rates: "£54.99",
       parking: "Free",
+    },
+    {
+      type: "B&B",
+      name: "The Old Farm Yard",
+      address: "19a Dolphin Lane, Melbourn, SG8 6AE, United Kingdom",
+      url: "http://www.theoldfarmyardbb.co.uk/",
+      rooms: "Double Room",
+      rates: "Contact B&B",
+      parking: "Contact B&B",
+    },
+    {
+      type: "B&B",
+      name: "The Old Magistrates Court",
+      address:
+        "The Old Magistrates Court, 1 Cross Lane, Melbourn, Cambridgeshire, SG8 6AG",
+      url: "https://www.theoldmagistratescourt.co.uk/",
+      rooms: "Double Room",
+      rates: "Contact B&B",
+      parking: "Contact B&B",
+    },
+    {
+      type: "B&B",
+      name: "Hall Farm",
+      address:
+        "Chishill Hall, 110 Hall Lane, Great Chishill nr Royston, Hertfordshire, SG8 8SH",
+      url: "https://www.hallfarmbb.co.uk/",
+      rooms: "Double & Family Rooms",
+      rates: "Contact B&B",
+      parking: "Contact B&B",
+    },
+    {
+      type: "Hotel",
+      name: "Holiday Inn Express - Duxford",
+      address: "42 Station Rd E, Whittlesford, Bridge, Cambridge CB22 4WL",
+      url: "https://www.ihg.com/holidayinnexpress/hotels/gb/en/cambridge/cbgdk/hoteldetail?cm_mmc=GoogleMaps-_-EX-_-GB-_-CBGDK",
+      rooms: "Double/Twin Rooms",
+      rates: "~£80",
+      parking: "£6",
     },
   ];
 
@@ -124,9 +171,9 @@ const Details: React.FC = () => {
         <h2 className="plain-title-text ta-center">By Car</h2>
         <p>
           Sheene Mill can be easily accessed by road. The venue is just off the
-          A10 from Royston heading to Cambridge. There is parking at the
-          venue but we ask that you do not leave your car parked at the venue overnight
-          unless you are staying at the venue.
+          A10 from Royston heading to Cambridge. There is parking at the venue
+          but we ask that you do not leave your car parked at the venue
+          overnight unless you are staying at the venue.
         </p>
         <br />
         <h2 className="plain-title-text ta-center">By Train</h2>
@@ -139,7 +186,8 @@ const Details: React.FC = () => {
         <h2 className="plain-title-text ta-center">By Taxi</h2>
         <p>
           We recommend that you book your taxis in advance, as the venue is not
-          located in a large town taxis may not be available on demand. Below are list of recommended taxi firms.
+          located in a large town taxis may not be available on demand. Below
+          are list of recommended taxi firms.
           <ul>
             {taxis.map((taxi) => {
               return (
