@@ -293,7 +293,7 @@ const RSVP: React.FC = () => {
                           <FormControlLabel
                             value="no"
                             control={<Radio />}
-                            label="Declines with Regrets"
+                            label="Declines with Regret"
                           />
                         </Field>
                       </FormControl>

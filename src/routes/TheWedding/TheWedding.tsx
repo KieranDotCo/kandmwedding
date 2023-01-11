@@ -16,7 +16,7 @@ const TheWedding: React.FC = () => {
           </h2>
           <strong>Date</strong>
           <p className="ta-center">Monday 22nd May 2023</p>
-          <strong>Guest Arrive</strong>
+          <strong>Arrive From</strong>
           <p className="ta-center">1:30pm</p>
           <strong>Venue Address</strong>
           <address style={{ fontStyle: "normal" }}>

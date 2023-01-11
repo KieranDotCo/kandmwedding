@@ -220,8 +220,8 @@ const Details: React.FC = () => {
                   <TableCell>Type</TableCell>
                   <TableCell>Name</TableCell>
                   <TableCell>Address</TableCell>
-                  <TableCell>Rooms</TableCell>
-                  <TableCell>Rates</TableCell>
+                  {/* <TableCell>Rooms</TableCell>
+                  <TableCell>Rates</TableCell> */}
                   <TableCell>Parking</TableCell>
                 </TableRow>
               </TableHead>
@@ -234,8 +234,8 @@ const Details: React.FC = () => {
                         <Link href={hotel.url}>{hotel.name}</Link>
                       </TableCell>
                       <TableCell>{hotel.address}</TableCell>
-                      <TableCell>{hotel.rooms}</TableCell>
-                      <TableCell>{hotel.rates}</TableCell>
+                      {/* <TableCell>{hotel.rooms}</TableCell>
+                      <TableCell>{hotel.rates}</TableCell> */}
                       <TableCell>{hotel.parking}</TableCell>
                     </TableRow>
                   );
