@@ -7,10 +7,12 @@ import PageNotFound from "../PageNotFound/PageNotFound";
 import "./Invite.scss";
 import bgTop from "../../assets/images/small-bg-top.png";
 import bgBottom from "../../assets/images/small-bg-bottom.png";
+import Auxiliary from "../../shared/components/Auxiliary/Auxiliary";
 
 const Invite: React.FC = () => {
   const { id } = useParams();
   const [invitee, setInvitee] = React.useState<Invitee>();
+  const [fetching, setFetching] = React.useState(true);
 
   React.useEffect(() => {
     const _invitee = INVITES.find((i) => i.id === id);
@@ -18,7 +20,28 @@ const Invite: React.FC = () => {
     if (_invitee) {
       setInvitee(_invitee);
     }
+    setFetching(false);
   }, [id]);
+
+  if (fetching) {
+    return (
+      <div className="Invite">
+        <div
+          style={{ paddingTop: "2rem", paddingBottom: "2rem" }}
+          className="bg-grey"
+        >
+          <Container
+            maxWidth="lg"
+            style={{
+              paddingTop: "1rem",
+              paddingBottom: "1rem",
+              minHeight: "796px",
+            }}
+          ></Container>
+        </div>
+      </div>
+    );
+  }
 
   if (!invitee) {
     return <PageNotFound />;
@@ -39,7 +62,17 @@ const Invite: React.FC = () => {
             <div className="back"></div>
             <form className="letter ta-center">
               <img src={bgTop} alt="bg top" className="bg-top" />
-              <h2 className="mt025 mb025">To {invitee.names.join(" & ")}</h2>
+              <h2 className="mt025 mb025">
+                To{" "}
+                {invitee.names.map((_invitee, index) => {
+                  if (index === 0) {
+                    return <Auxiliary key={_invitee}>{_invitee}</Auxiliary>;
+                  } else if (index === invitee.names.length - 1) {
+                    return <Auxiliary key={_invitee}> & {_invitee}</Auxiliary>;
+                  }
+                  return <Auxiliary key={_invitee}>, {_invitee}</Auxiliary>;
+                })}
+              </h2>
               <p className="mt05 mb05">
                 Kieran Whiteman
                 <br />

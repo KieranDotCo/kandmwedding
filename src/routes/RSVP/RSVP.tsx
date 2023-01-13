@@ -29,12 +29,13 @@ import { useParams } from "react-router-dom";
 import { INVITES } from "../../shared/Invites";
 
 const ValidationSchema = Yup.object().shape({
-  guests: Yup.array().of(
-    Yup.object().shape({
-      name: Yup.string().required("Please enter the guests name."),
-      diet: Yup.string().required("Please fill in this field or type N/A."),
-    })
-  ),
+  guests: Yup.array()
+    .of(
+      Yup.object().shape({
+        name: Yup.string().required("Please enter the guests name."),
+        diet: Yup.string().required("Please fill in this field or type N/A."),
+      })
+    ),
   email: Yup.string().required("Please enter an email address."),
   phone: Yup.string().required("Please enter a contact number."),
   attending: Yup.string(),
@@ -59,22 +60,25 @@ enum SentStatus {
   Failed,
 }
 
+const defaultFormValues = {
+  guests: [
+    {
+      name: "",
+      diet: "",
+    },
+  ],
+  attending: "yes",
+  email: "",
+  phone: "",
+  song: "",
+  part: [],
+};
+
 const RSVP: React.FC = () => {
   const { id } = useParams();
   const [sent, setSent] = React.useState(SentStatus.Unsent);
-  const [formValues, setFormValues] = React.useState({
-    guests: [
-      {
-        name: "",
-        diet: "",
-      },
-    ],
-    attending: "yes",
-    email: "",
-    phone: "",
-    song: "",
-    part: [],
-  });
+  const [part, setPart] = React.useState("day");
+  const [formValues, setFormValues] = React.useState(defaultFormValues);
 
   React.useEffect(() => {
     const _invitee = INVITES.find((i) => i.id === id);
@@ -92,6 +96,10 @@ const RSVP: React.FC = () => {
         invite.guests.push({ name: i, diet: "" });
       });
       setFormValues(invite);
+      setPart(_invitee.part);
+    } else {
+      setFormValues(defaultFormValues);
+      setPart("day");
     }
   }, [id]);
 
@@ -182,7 +190,7 @@ const RSVP: React.FC = () => {
                 <Form noValidate={true}>
                   {sent === SentStatus.Failed ? (
                     <>
-                      <Alert  severity="error">
+                      <Alert severity="error">
                         There was an error submitting your response, please try
                         again.
                       </Alert>
@@ -210,6 +218,7 @@ const RSVP: React.FC = () => {
                                   size="small"
                                   className="tt-none"
                                   onClick={() => arrayHelpers.remove(index)}
+                                  disabled={values.guests.length === 1}
                                 >
                                   Remove Guest
                                 </Button>
@@ -301,7 +310,10 @@ const RSVP: React.FC = () => {
                     {values.attending === "yes" ? (
                       <Grid item xs={6}>
                         <FormControl>
-                          <FormLabel required error={!!errors.part}>
+                          <FormLabel
+                            required
+                            error={!!(errors.part && touched.part)}
+                          >
                             Which part(s) of the day will you be attending?
                           </FormLabel>
                           <Field
@@ -310,6 +322,7 @@ const RSVP: React.FC = () => {
                             name="part"
                             value="day"
                             Label={{ label: "Day" }}
+                            disabled={part === "evening"}
                           />
                           <Field
                             component={CheckboxWithLabel}
