@@ -27,15 +27,15 @@ import RestaurantIcon from "@mui/icons-material/Restaurant";
 import bgBottom from "../../assets/images/small-bg-bottom.png";
 import { useParams } from "react-router-dom";
 import { INVITES } from "../../shared/Invites";
+import { ScrollToError } from "../../shared/components/ScrollToError/ScrollToError";
 
 const ValidationSchema = Yup.object().shape({
-  guests: Yup.array()
-    .of(
-      Yup.object().shape({
-        name: Yup.string().required("Please enter the guests name."),
-        diet: Yup.string().required("Please fill in this field or type N/A."),
-      })
-    ),
+  guests: Yup.array().of(
+    Yup.object().shape({
+      name: Yup.string().required("Please enter the guests name."),
+      diet: Yup.string().required("Please fill in this field or type N/A."),
+    })
+  ),
   email: Yup.string().required("Please enter an email address."),
   phone: Yup.string().required("Please enter a contact number."),
   attending: Yup.string(),
@@ -188,6 +188,7 @@ const RSVP: React.FC = () => {
             >
               {({ errors, touched, values }) => (
                 <Form noValidate={true}>
+                  <ScrollToError />
                   {sent === SentStatus.Failed ? (
                     <>
                       <Alert severity="error">
@@ -290,7 +291,7 @@ const RSVP: React.FC = () => {
                   <br />
                   <br />
                   <Grid container>
-                    <Grid item xs={6}>
+                    <Grid item xs={12} sm={6}>
                       <FormControl>
                         <FormLabel required>Attending?</FormLabel>
                         <Field component={RadioGroup} name="attending">
@@ -308,7 +309,7 @@ const RSVP: React.FC = () => {
                       </FormControl>
                     </Grid>
                     {values.attending === "yes" ? (
-                      <Grid item xs={6}>
+                      <Grid item xs={12} sm={6}>
                         <FormControl>
                           <FormLabel
                             required
@@ -344,7 +345,7 @@ const RSVP: React.FC = () => {
 
                   {values.attending === "yes" ? (
                     <Grid container spacing={1} className="mt1">
-                      <Grid item sm={12} md={9} lg={6}>
+                      <Grid item xs={12} sm={12} md={9} lg={6}>
                         <Field
                           component={TextField}
                           name={`email`}
@@ -364,7 +365,7 @@ const RSVP: React.FC = () => {
                           }}
                         />
                       </Grid>
-                      <Grid item sm={12} md={9} lg={6}>
+                      <Grid item xs={12} sm={12} md={9} lg={6}>
                         <Field
                           component={TextField}
                           name={`phone`}
@@ -384,7 +385,7 @@ const RSVP: React.FC = () => {
                           }}
                         />
                       </Grid>
-                      <Grid item sm={12}>
+                      <Grid item xs={12} sm={12}>
                         <Field
                           component={TextField}
                           name={`song`}

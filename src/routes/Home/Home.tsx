@@ -87,7 +87,7 @@ const Home: React.FC = (props) => {
           <Grid item md={6} className="ta-center">
             <h3 className="cali-title-text">Key Information</h3>
             <p className="cali-desc-text">
-              If the weather is good the wedding will take place outside, please
+              If the weather is dry the wedding will take place outside, please
               dress smart and appropriately.
               <br />
               <br /> Guest Arrival from 1:30pm

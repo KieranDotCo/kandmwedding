@@ -8,7 +8,7 @@
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -41,11 +41,11 @@ main {
 }
 
 .bg-grey {
-  background-color: #F9FAFA;
+  background-color: #f9fafa;
 }
 
 a {
-  font-family: 'Inter', sans-serif !important;
+  font-family: "Inter", sans-serif !important;
   text-transform: none !important;
 }
 
@@ -95,7 +95,12 @@ footer {
 }
 
 .caligraphy-text {
-  font-family: 'Bad Script', cursive;
+  font-family: "Bad Script", cursive !important;
+}
+
+.caligraphy-link {
+  text-decoration: none;
+  color: inherit;
 }
 
 @media (max-width: 410px) {

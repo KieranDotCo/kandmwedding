@@ -12,7 +12,7 @@ import {
 import React from "react";
 import "./Navbar.scss";
 import { Link, useLocation } from "react-router-dom";
-import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Navbar: React.FC = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -71,7 +71,9 @@ const Navbar: React.FC = () => {
               sx={{ flexGrow: 1 }}
               style={{ fontFamily: "Bad Script, cursive", fontSize: "36px" }}
             >
-              Kieran & Mallory
+              <Link to="/" color="inherit" className="caligraphy-text caligraphy-link">
+                Kieran & Mallory
+              </Link>
             </Typography>
             <Box sx={{ display: { xs: "none", sm: "none", md: "block" } }}>
               {pages.map((item) => (
@@ -97,9 +99,9 @@ const Navbar: React.FC = () => {
                 aria-haspopup="true"
                 aria-expanded={anchorElNav !== null ? "true" : undefined}
                 onClick={handleOpenNavMenu}
-                style={{color: 'black'}}
+                style={{ color: "black" }}
               >
-                <MenuIcon/>
+                <MenuIcon />
               </IconButton>
               <Menu
                 id="basic-menu"
@@ -113,7 +115,7 @@ const Navbar: React.FC = () => {
                 {pages.map((item) => (
                   <MenuItem
                     key={item.name}
-                    sx={{ color: "black"}}
+                    sx={{ color: "black" }}
                     component={Link}
                     to={item.url}
                     onClick={handleCloseNavMenu}
