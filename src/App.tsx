@@ -11,9 +11,15 @@ import ScrollToTop from "./shared/components/ScrollToTop/ScrollToTop";
 import Invite from "./routes/Invite/Invite";
 import PasswordProtection from "./routes/PasswordProtection/PasswordProtection";
 import useLocalStorage from "./shared/hooks/useLocalStorage";
+import ReactGA from "react-ga4";
+
+if (process.env.NODE_ENV === "production") {
+  ReactGA.initialize("G-4NJQN46DHS");
+  ReactGA.send("pageview");
+}
 
 function App() {
-  const [passed, setPassed] = useLocalStorage('kmpassword',false);
+  const [passed, setPassed] = useLocalStorage("kmpassword", false);
 
   if (!passed) {
     return <PasswordProtection onSuccess={() => setPassed(true)} />;
