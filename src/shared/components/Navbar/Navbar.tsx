@@ -27,15 +27,15 @@ const Navbar: React.FC = () => {
     setAnchorElNav(null);
   };
 
-  function getRemainingTime() {
-    const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
-    const firstDate = new Date() as any;
-    const secondDate = new Date(2023, 5, 22) as any;
+  // function getRemainingTime() {
+  //   const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+  //   const firstDate = new Date() as any;
+  //   const secondDate = new Date(2023, 5, 22) as any;
 
-    const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+  //   const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
 
-    return diffDays;
-  }
+  //   return diffDays;
+  // }
 
   const pages = [
     {
