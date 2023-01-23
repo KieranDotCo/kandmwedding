@@ -21,7 +21,7 @@ export const INVITES = [
   },
   {
     id: "fd78c158-6ecd-46a7-b6d0-244159d9a610",
-    names: ["Robert Moore", "Molly"],
+    names: ["Robert Moore", "Molly Crocker"],
     part: "day",
   },
   {
