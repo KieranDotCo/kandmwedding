@@ -9,8 +9,8 @@ import TheWedding from "./routes/TheWedding/TheWedding";
 import RSVP from "./routes/RSVP/RSVP";
 import ScrollToTop from "./shared/components/ScrollToTop/ScrollToTop";
 import Invite from "./routes/Invite/Invite";
-import PasswordProtection from "./routes/PasswordProtection/PasswordProtection";
-import useLocalStorage from "./shared/hooks/useLocalStorage";
+// import PasswordProtection from "./routes/PasswordProtection/PasswordProtection";
+// import useLocalStorage from "./shared/hooks/useLocalStorage";
 import ReactGA from "react-ga4";
 
 if (process.env.NODE_ENV === "production") {
@@ -19,11 +19,11 @@ if (process.env.NODE_ENV === "production") {
 }
 
 function App() {
-  const [passed, setPassed] = useLocalStorage("kmpassword", false);
+  // const [passed, setPassed] = useLocalStorage("kmpassword", false);
 
-  if (!passed) {
-    return <PasswordProtection onSuccess={() => setPassed(true)} />;
-  }
+  // if (!passed) {
+  //   return <PasswordProtection onSuccess={() => setPassed(true)} />;
+  // }
 
   return (
     <Router>

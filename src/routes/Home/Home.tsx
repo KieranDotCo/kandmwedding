@@ -39,7 +39,10 @@ const Home: React.FC = (props) => {
                 old mill pond and Cambridgeshire countryside.
                 <br />
               </p>
-              <address className="cali-desc-text" style={{ fontStyle: "normal" }}>
+              <address
+                className="cali-desc-text"
+                style={{ fontStyle: "normal" }}
+              >
                 Sheene Mill
                 <br />
                 37-39 Station Road
@@ -87,8 +90,10 @@ const Home: React.FC = (props) => {
           <Grid item md={6} className="ta-center">
             <h3 className="cali-title-text">Key Information</h3>
             <p className="cali-desc-text">
-              If the weather is dry the wedding will take place outside, please
-              dress smart and appropriately.
+              If the weather is dry the wedding will take place outside, seating
+              will be on the grass so we advise chunky or wedge heels to prevent
+              you getting stuck. If like the bride you are prone to burning, please bring
+              sun cream, as you will hopefully be sat in the sun!
               <br />
               <br /> Guest Arrival from 1:30pm
               <br />

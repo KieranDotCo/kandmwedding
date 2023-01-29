@@ -58,6 +58,7 @@ export const INVITES = [
     id: "c54f17e0-ef92-43a8-997f-00b1ed4cb18c",
     names: ["Kerri Fear", "Mark Burns"],
     part: "day",
+    rsvped: true
   },
   {
     id: "1fb2823d-6c31-45c6-97af-a9e09c68f96e",

@@ -8,6 +8,7 @@ import {
   FormLabel,
   Grid,
   InputAdornment,
+  Link,
   Paper,
   Radio,
   Typography,
@@ -25,7 +26,7 @@ import QueueMusicIcon from "@mui/icons-material/QueueMusic";
 import PersonIcon from "@mui/icons-material/Person";
 import RestaurantIcon from "@mui/icons-material/Restaurant";
 import bgBottom from "../../assets/images/small-bg-bottom.png";
-import { useParams } from "react-router-dom";
+import { Link as RouterLink, useParams } from "react-router-dom";
 import { INVITES } from "../../shared/Invites";
 import { ScrollToError } from "../../shared/components/ScrollToError/ScrollToError";
 
@@ -156,11 +157,31 @@ const RSVP: React.FC = () => {
                 Thank You!
               </h2>
               <p className="ta-center">Your response has been received.</p>
-              <br />
+              <Typography
+                className="ta-center"
+                color="textSecondary"
+              >
+                <Link underline="hover" component={RouterLink} to="/">
+                  Home
+                </Link>{" "}
+                ~{" "}
+                <Link
+                  underline="hover"
+                  component={RouterLink}
+                  to="/the-wedding"
+                >
+                  The Wedding
+                </Link>{" "}
+                ~{" "}
+                <Link underline="hover" component={RouterLink} to="/details">
+                  Details
+                </Link>
+              </Typography>
+              <br/>
               <img
                 src={bgBottom}
                 style={{
-                  transform: "scaleY(-1) scaleX(-1)",
+                  transform: "scaleX(-1)",
                   height: "50px",
                   marginLeft: "0.5rem",
                 }}

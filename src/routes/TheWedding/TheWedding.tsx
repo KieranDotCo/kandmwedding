@@ -46,7 +46,7 @@ const TheWedding: React.FC = () => {
         </h2>
         <div className="order-of-service">
           <h6 className="order-text">13:30 - Day Guests Arrive</h6>
-          <h6 className="order-text">14:00 - Ceremony</h6>
+          <h6 className="order-text">14:00 - Ceremony Begins</h6>
           <h6 className="order-text">14:30 - Drinks Reception</h6>
           <h6 className="order-text">16:00 - Seated for Meal</h6>
           <h6 className="order-text">19:00 - Evening Guests Arrive</h6>

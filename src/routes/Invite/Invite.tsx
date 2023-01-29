@@ -1,6 +1,6 @@
-import { Button, Container } from "@mui/material";
+import { Button, Container, Typography, Link } from "@mui/material";
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link as RouterLink, useParams } from "react-router-dom";
 import { INVITES } from "../../shared/Invites";
 import { Invitee } from "../../shared/models/Invitee";
 import PageNotFound from "../PageNotFound/PageNotFound";
@@ -86,17 +86,47 @@ const Invite: React.FC = () => {
                 <br />
                 At Sheene Mill, Melbourn, SG8 6DX
               </p>
-              <p className="mt05 mb05">RSVP By 28-02-2023</p>
-              <Button
-                variant="contained"
-                component={Link}
-                to={`/rsvp/${id}`}
-                color="primary"
-              >
-                RSVP
-              </Button>
-              <br />
-              <br />
+              {invitee.rsvped ? (
+                <>
+                  <p className="mt1 mb1">Thank you for RSVPing.</p>
+                  <Typography className="ta-center" color="textSecondary">
+                    <Link underline="hover" component={RouterLink} to="/">
+                      Home
+                    </Link>{" "}
+                    ~{" "}
+                    <Link
+                      underline="hover"
+                      component={RouterLink}
+                      to="/the-wedding"
+                    >
+                      The Wedding
+                    </Link>{" "}
+                    ~{" "}
+                    <Link
+                      underline="hover"
+                      component={RouterLink}
+                      to="/details"
+                    >
+                      Details
+                    </Link>
+                  </Typography>
+                  <br />
+                </>
+              ) : (
+                <>
+                  <p className="mt05 mb05">RSVP By 28-02-2023</p>
+                  <Button
+                    variant="contained"
+                    component={RouterLink}
+                    to={`/rsvp/${id}`}
+                    color="primary"
+                  >
+                    RSVP
+                  </Button>
+                  <br />
+                  <br />
+                </>
+              )}
               <img src={bgBottom} alt="bg top" className="bg-bottom" />
               <br />
               <br />

@@ -1,5 +1,6 @@
 export interface Invitee {
   id: string,
   names: string[],
-  part: string
+  part: string,
+  rsvped?: boolean
 }
