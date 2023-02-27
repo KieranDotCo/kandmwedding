@@ -114,7 +114,7 @@ const Invite: React.FC = () => {
                 </>
               ) : (
                 <>
-                  <p className="mt05 mb05">RSVP By 28-02-2023</p>
+                  <p className="mt05 mb05">RSVP By {invitee.part === "day" ? '28-02-2023' : '31-03-2023'}</p>
                   <Button
                     variant="contained"
                     component={RouterLink}

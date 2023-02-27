@@ -1,33 +1,39 @@
 export const INVITES = [
   {
     id: "091ed771-f15d-4f42-b9df-d576ee82e3ff",
-    names: ["Marrion Ambiguo-James", "Peter Ambiguo"],
+    names: ["Marion Ambiguo-James", "Peter Ambiguo"],
     part: "day",
+    rsvped: true,
   },
   {
     id: "8019129c-b131-47e1-8952-e3267bb8d84f",
     names: ["Bryony James", "+1"],
     part: "day",
+    rsvped: true,
   },
   {
     id: "f0454082-9c0e-461a-a84a-99596401f4bf",
     names: ["Angela Whiteman"],
     part: "day",
+    rsvped: true,
   },
   {
     id: "452be92c-945a-4741-80c2-673bd0b50ac0",
     names: ["Jayne Moore", "Malcolm Moore"],
     part: "day",
+    rsvped: true,
   },
   {
     id: "fd78c158-6ecd-46a7-b6d0-244159d9a610",
     names: ["Robert Moore", "Molly Crocker"],
     part: "day",
+    rsvped: true,
   },
   {
     id: "bc72cf43-56c3-4e75-b25d-76c72bd33536",
     names: ["Kat Moore"],
     part: "day",
+    rsvped: true,
   },
   {
     id: "63bcfa38-4bd7-463e-b7cb-01c2635901b0",
@@ -38,6 +44,7 @@ export const INVITES = [
     id: "d3fe3ce9-3680-438a-9448-709bcf2fd281",
     names: ["Andrew Carey", "Helen Murphy"],
     part: "day",
+    rsvped: true,
   },
   {
     id: "e0368d9b-eea3-4280-b6b4-265eb80fea28",
@@ -48,32 +55,37 @@ export const INVITES = [
     id: "a147d0c9-68fc-49c5-95a9-f997393bb76c",
     names: ["Lizzy Carey", "Tom Whitaker"],
     part: "day",
+    rsvped: true,
   },
   {
     id: "fa5b66b1-eb7f-4a24-96be-6f42d043ad2e",
     names: ["Robert Prior", "Josie Prior", "George Prior"],
     part: "day",
+    rsvped: true,
   },
   {
     id: "c54f17e0-ef92-43a8-997f-00b1ed4cb18c",
     names: ["Kerri Fear", "Mark Burns"],
     part: "day",
-    rsvped: true
+    rsvped: true,
   },
   {
     id: "1fb2823d-6c31-45c6-97af-a9e09c68f96e",
     names: ["Millie Norton-Tinmouth", "Simon Norton-Tinmouth"],
     part: "day",
+    rsvped: true,
   },
   {
     id: "6be5722f-bd45-40b7-bbdb-d356d03d2fc2",
     names: ["Chloe Rogers", "Greg Rogers"],
     part: "day",
+    rsvped: true,
   },
   {
     id: "bec6b330-edcb-455d-8d4c-bffd590f3330",
     names: ["Catherine Earp", "Gary Peters"],
     part: "day",
+    rsvped: true,
   },
   {
     id: "adc7a5e4-4694-4776-a0a2-5ed2a7ac8a58",
@@ -84,40 +96,96 @@ export const INVITES = [
     id: "9771178d-8c64-4fbc-b6b9-2f3652056931",
     names: ["Amy Hance"],
     part: "day",
+    rsvped: true,
   },
   {
     id: "c4f0748b-1409-436a-938e-ba47c21bb0cb",
     names: ["Astrid Løndal", "John Marston"],
     part: "day",
+    rsvped: true,
   },
   {
     id: "04d4a808-2c99-45d7-bb24-2440bcf752b6",
-    names: ["George Lee", "+1"],
+    names: ["George Lee", "Tansy McIntyre"],
     part: "day",
+    rsvped: true,
   },
   {
     id: "5fc09995-0456-405d-9963-027490914ace",
-    names: ["Grant Turner", "+1"],
+    names: ["Grant Turner"],
     part: "day",
+    rsvped: true,
   },
   {
     id: "4349cc31-770e-4031-8c25-a74064e610f0",
     names: ["Dan Mastro", "Kelly Marie"],
     part: "day",
+    rsvped: true,
   },
   {
     id: "ca753b73-5907-45ad-9201-1ffccddc9a51",
     names: ["Louise Ashford", "Perry"],
     part: "day",
+    rsvped: true,
   },
   {
     id: "a85b71de-be32-43cc-bd85-008be1d2b9a8",
     names: ["Chris Hitchings", "Hayley Hitchings"],
-    part: "day",
+    part: "evening",
   },
   {
     id: "d7ed089d-4710-44ec-a954-ee9fc6f826a1",
     names: ["Alex Hills"],
     part: "day",
+  },
+  {
+    id: "2a5e6200-7f9f-4cac-89c2-3adfd51a93da",
+    names: ["Kieran Davis", "+ 1"],
+    part: "day",
+  },
+  {
+    id: "92321744-56de-437b-8897-1ce9ca6be6f0",
+    names: ["Klea Isufi", "Daniel Riley"],
+    part: "evening",
+  },
+  {
+    id: "085ab4eb-6683-4add-9d46-5609629066e2",
+    names: ["Lisa Lemaitre"],
+    part: "evening",
+  },
+  {
+    id: "5b58743d-aa4d-48c7-84ae-09e4aff22373",
+    names: ["Helen French"],
+    part: "evening",
+  },
+  {
+    id: "af0f9f3d-ffb8-4676-ab14-5ee512411329",
+    names: ["Ryan"],
+    part: "evening",
+  },
+  {
+    id: "3339ae54-7c2e-4d49-8b05-4fba12ed5fcd",
+    names: ["Mark Searle"],
+    part: "evening",
+  },
+  {
+    id: "6b6097c1-974f-4713-a33f-f8f41fffa663",
+    names: ["Karl Scott"],
+    part: "evening",
+  },
+  {
+    id: "cde715c7-6e5d-40ab-87f5-0ef73ef95309",
+    names: ["Andrew Morgans"],
+    part: "evening",
+  },
+  {
+    id: "2064258b-4a4a-4b7e-a364-837c5fc587ae",
+    names: ["Luke Sambridge"],
+    part: "evening",
+  },
+  {
+    id: "c79506da-a6f4-49df-964c-239a9fff2bc7",
+    names: ["Chris Davie"],
+    part: "evening",
   },
 ];
