@@ -150,17 +150,17 @@ export const INVITES = [
   },
   {
     id: "085ab4eb-6683-4add-9d46-5609629066e2",
-    names: ["Lisa Lemaitre"],
+    names: ["Lisa Lemaitre", "Laurent Lemaitre"],
     part: "evening",
   },
   {
     id: "5b58743d-aa4d-48c7-84ae-09e4aff22373",
-    names: ["Helen French"],
+    names: ["Helen French", "Michael French"],
     part: "evening",
   },
   {
     id: "af0f9f3d-ffb8-4676-ab14-5ee512411329",
-    names: ["Ryan"],
+    names: ["Ryan", "+1"],
     part: "evening",
   },
   {
@@ -186,6 +186,16 @@ export const INVITES = [
   {
     id: "c79506da-a6f4-49df-964c-239a9fff2bc7",
     names: ["Chris Davie"],
+    part: "evening",
+  },
+  {
+    id: "a5ba7214-0a42-4d41-94d9-374d19b6f23a",
+    names: ["Bjarki Holm", "Bryndis Yngvadottir"],
+    part: "evening",
+  },
+  {
+    id: "2beba513-416e-45f2-ba52-af03e5360eb5",
+    names: ["Sally Flaxman", "Flaxy"],
     part: "evening",
   },
 ];
