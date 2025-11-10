@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/kandmwedding/static/css/main.61d70a0a.css",
+    "main.js": "/kandmwedding/static/js/main.e1fcd1c5.js",
+    "static/js/787.a156079d.chunk.js": "/kandmwedding/static/js/787.a156079d.chunk.js",
+    "static/media/sheene-mill-front.jpg": "/kandmwedding/static/media/sheene-mill-front.37655c99464fcaa860d5.jpg",
+    "static/media/large-bg-top-right.png": "/kandmwedding/static/media/large-bg-top-right.b7126965c3e13c998129.png",
+    "static/media/large-bg-bottom-left.png": "/kandmwedding/static/media/large-bg-bottom-left.fabbf0d49fd0e5ae93cc.png",
+    "static/media/sheene-mill-river-pav.jpg": "/kandmwedding/static/media/sheene-mill-river-pav.70973df17a50256b98d6.jpg",
+    "static/media/crystal-sky.eot": "/kandmwedding/static/media/crystal-sky.0f02d4914e84abc827c7.eot",
+    "static/media/crystal-sky.ttf": "/kandmwedding/static/media/crystal-sky.bae07e4c301d59bbf9b2.ttf",
+    "static/media/crystal-sky.woff2": "/kandmwedding/static/media/crystal-sky.343727f78b6d2a0ad909.woff2",
+    "static/media/small-bg-top.png": "/kandmwedding/static/media/small-bg-top.bc6066688c077998e37a.png",
+    "static/media/small-bg-bottom.png": "/kandmwedding/static/media/small-bg-bottom.d3474abd7a1f4854953c.png",
+    "index.html": "/kandmwedding/index.html",
+    "main.61d70a0a.css.map": "/kandmwedding/static/css/main.61d70a0a.css.map",
+    "main.e1fcd1c5.js.map": "/kandmwedding/static/js/main.e1fcd1c5.js.map",
+    "787.a156079d.chunk.js.map": "/kandmwedding/static/js/787.a156079d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.61d70a0a.css",
+    "static/js/main.e1fcd1c5.js"
+  ]
+}
